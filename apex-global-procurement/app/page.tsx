@@ -8,7 +8,7 @@ import Footer from "../components/ui/footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-black">
+    <div className="min-h-screen bg-slate-950">
       <Hero />
       <OurProcess />
       <VatAdvantage />

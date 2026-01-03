@@ -1,58 +1,279 @@
+"use client";
+
+import { useState } from "react";
+import { Send, MessageCircle, MapPin, Phone, Mail, Clock } from "lucide-react";
+
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    business: "",
+    email: "",
+    phone: "",
+    category: "",
+    budget: "",
+    items: "",
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    // Handle form submission logic here
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
-    <section id="contact" className="bg-white dark:bg-slate-900 py-16">
-      <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-slate-100">Contact & Quotation Request</h2>
-        <p className="mt-3 text-slate-600 dark:text-slate-300">Fill the form below to request a quotation or get in touch via WhatsApp for a faster response.</p>
+    <section id="contact" className="py-20 px-6 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full filter blur-3xl"></div>
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full filter blur-3xl"></div>
+      
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-semibold mb-4 backdrop-blur-sm">
+            Get In Touch
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Contact &{' '}
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
+              Quotation Request
+            </span>
+          </h2>
+          <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+            Fill out the form below to request a quotation or reach out via WhatsApp for faster response.
+          </p>
+        </div>
 
-        <form className="mt-6 grid gap-4">
-          <div className="grid sm:grid-cols-2 gap-4">
-            <input name="name" placeholder="Name" className="w-full p-3 border rounded" />
-            <input name="business" placeholder="Business" className="w-full p-3 border rounded" />
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Contact Form */}
+          <div className="lg:col-span-2 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 md:p-10 rounded-2xl border border-slate-700/50 hover:border-cyan-500/30 transition-all duration-300">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold text-slate-300 mb-2">
+                    Name <span className="text-red-400">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3.5 bg-slate-900/50 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+                    placeholder="Your name"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-semibold text-slate-300 mb-2">
+                    Business <span className="text-red-400">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="business"
+                    value={formData.business}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3.5 bg-slate-900/50 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+                    placeholder="Business name"
+                  />
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold text-slate-300 mb-2">
+                    Email <span className="text-red-400">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3.5 bg-slate-900/50 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+                    placeholder="your@email.com"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-semibold text-slate-300 mb-2">
+                    Phone <span className="text-red-400">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3.5 bg-slate-900/50 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+                    placeholder="+265 123 4567"
+                  />
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold text-slate-300 mb-2">
+                    Product Category <span className="text-red-400">*</span>
+                  </label>
+                  <select
+                    name="category"
+                    value={formData.category}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3.5 bg-slate-900/50 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+                  >
+                    <option value="">Select category</option>
+                    <option value="industrial">Industrial Supplies</option>
+                    <option value="solar">Solar & Energy</option>
+                    <option value="automotive">Automotive Parts</option>
+                    <option value="medical">Medical Equipment</option>
+                    <option value="agricultural">Agricultural Inputs</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-semibold text-slate-300 mb-2">Estimated Budget (MWK)</label>
+                  <input
+                    type="text"
+                    name="budget"
+                    value={formData.budget}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3.5 bg-slate-900/50 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+                    placeholder="e.g., 1,000,000"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-slate-300 mb-2">
+                  Specific Items Needed <span className="text-red-400">*</span>
+                </label>
+                <textarea
+                  name="items"
+                  value={formData.items}
+                  onChange={handleChange}
+                  required
+                  rows={4}
+                  className="w-full px-4 py-3.5 bg-slate-900/50 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all resize-none"
+                  placeholder="Describe the items you need or attach a list below..."
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-slate-300 mb-2">Attach List (Optional)</label>
+                <input
+                  type="file"
+                  accept=".pdf,.xlsx,.csv"
+                  className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-xl text-slate-400 file:mr-4 file:py-2.5 file:px-5 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-cyan-500/20 file:text-cyan-400 hover:file:bg-cyan-500/30 file:transition-all cursor-pointer"
+                />
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <button
+                  type="submit"
+                  className="group flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 transform hover:scale-105 text-white"
+                >
+                  Request Quote
+                  <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+                
+                <a
+                  href="https://wa.me/26512345678"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 rounded-full font-semibold transition-all duration-300 text-white shadow-lg hover:shadow-green-500/50 transform hover:scale-105"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  Chat on WhatsApp
+                </a>
+              </div>
+            </form>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-4">
-            <input name="email" type="email" placeholder="Email" className="w-full p-3 border rounded" />
-            <input name="phone" placeholder="Phone" className="w-full p-3 border rounded" />
-          </div>
-
-          <div className="grid sm:grid-cols-2 gap-4">
-            <select name="category" className="w-full p-3 border rounded">
-              <option>Product Category</option>
-              <option>Industrial Supplies</option>
-              <option>Solar & Energy</option>
-              <option>Automotive Parts</option>
-              <option>Medical Equipment</option>
-              <option>Agricultural Inputs</option>
-            </select>
-            <input name="budget" placeholder="Estimated Budget (MWK)" className="w-full p-3 border rounded" />
-          </div>
-
-          <div>
-            <label className="sr-only">Specific Items Needed</label>
-            <textarea name="items" placeholder="Specific items needed (or attach list)" rows={4} className="w-full p-3 border rounded" />
-            <div className="mt-2">
-              <input type="file" name="attachment" accept=".pdf,.xlsx,.csv" />
+          {/* Contact Information */}
+          <div className="space-y-6">
+            {/* South Africa Office */}
+            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-6 rounded-2xl border border-slate-700/50 hover:border-blue-500/30 transition-all duration-300">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <MapPin className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg text-white mb-1">South Africa</h4>
+                  <p className="text-sm text-slate-400">Registered Office</p>
+                </div>
+              </div>
+              <div className="space-y-3 pl-16">
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-4 h-4 text-slate-500 mt-1 flex-shrink-0" />
+                  <p className="text-sm text-slate-300">123 Business Ave, Johannesburg, South Africa</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-slate-500 flex-shrink-0" />
+                  <a href="tel:+27111234567" className="text-sm text-slate-300 hover:text-cyan-400 transition-colors">
+                    +27 11 123 4567
+                  </a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Mail className="w-4 h-4 text-slate-500 flex-shrink-0" />
+                  <a href="mailto:za@agp.example" className="text-sm text-slate-300 hover:text-cyan-400 transition-colors">
+                    za@agp.example
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div className="flex items-center gap-3">
-            <button type="submit" className="bg-blue-600 text-white px-5 py-3 rounded font-semibold">Request Quote</button>
-            <a href="https://wa.me/26512345678" target="_blank" rel="noreferrer" className="text-sm text-green-600">Chat on WhatsApp</a>
-          </div>
-        </form>
+            {/* Malawi Office */}
+            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-6 rounded-2xl border border-slate-700/50 hover:border-green-500/30 transition-all duration-300">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <MapPin className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg text-white mb-1">Malawi</h4>
+                  <p className="text-sm text-slate-400">Operational Contact</p>
+                </div>
+              </div>
+              <div className="space-y-3 pl-16">
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-4 h-4 text-slate-500 mt-1 flex-shrink-0" />
+                  <p className="text-sm text-slate-300">45 Commercial Rd, Blantyre, Malawi</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-slate-500 flex-shrink-0" />
+                  <a href="tel:+2651234567" className="text-sm text-slate-300 hover:text-cyan-400 transition-colors">
+                    +265 1 234 567
+                  </a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Mail className="w-4 h-4 text-slate-500 flex-shrink-0" />
+                  <a href="mailto:mw@agp.example" className="text-sm text-slate-300 hover:text-cyan-400 transition-colors">
+                    mw@agp.example
+                  </a>
+                </div>
+              </div>
+            </div>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded">
-            <h4 className="font-semibold text-slate-900 dark:text-slate-100">South Africa (Registered Office)</h4>
-            <p className="text-sm text-slate-700 dark:text-slate-300 mt-2">123 Business Ave, Johannesburg, South Africa</p>
-            <p className="text-sm text-slate-700 dark:text-slate-300 mt-1">Phone: +27 11 123 4567</p>
-          </div>
-
-          <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded">
-            <h4 className="font-semibold text-slate-900 dark:text-slate-100">Malawi (Operational Contact)</h4>
-            <p className="text-sm text-slate-700 dark:text-slate-300 mt-2">45 Commercial Rd, Blantyre, Malawi</p>
-            <p className="text-sm text-slate-700 dark:text-slate-300 mt-1">Phone: +265 1 234 567</p>
+            {/* Quick Response Badge */}
+            <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 p-6 rounded-2xl border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
+                  <Clock className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="font-bold text-white">Quick Response</h4>
+              </div>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                We typically respond to all enquiries within <span className="text-cyan-400 font-semibold">2-4 business hours</span> during working days.
+              </p>
+            </div>
           </div>
         </div>
       </div>
