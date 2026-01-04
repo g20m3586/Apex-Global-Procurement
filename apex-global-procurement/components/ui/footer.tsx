@@ -92,15 +92,15 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-cyan-400 mt-1 flex-shrink-0" />
-                <a href="mailto:info@agp.example" className="text-slate-400 hover:text-cyan-400 transition-colors text-sm">
-                  info@agp.example
+                <a href="mailto:mhangomorton@gmail.com" className="text-slate-400 hover:text-cyan-400 transition-colors text-sm">
+                  mhangomorton@gmail.com
                 </a>
               </div>
               
               <div className="flex items-start gap-3">
                 <MessageCircle className="w-4 h-4 text-green-400 mt-1 flex-shrink-0" />
-                <a href="https://wa.me/26512345678" className="text-slate-400 hover:text-green-400 transition-colors text-sm">
-                  +265 123 45678 (WhatsApp)
+                <a href="https://wa.me/27814104466" className="text-slate-400 hover:text-green-400 transition-colors text-sm">
+                  +27 814 104 466 (WhatsApp)
                 </a>
               </div>
               

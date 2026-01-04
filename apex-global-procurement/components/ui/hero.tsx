@@ -99,14 +99,14 @@ export default function Hero() {
               }`}
             >
               <Link
-                href="/contact"
+                href="/#contact"
                 className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
               >
                 Get Your Free Landed Cost Estimate
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link 
-                href="/services" 
+                href="/#services" 
                 className="inline-flex items-center justify-center px-8 py-4 border-2 border-slate-600 hover:border-cyan-500 text-slate-300 hover:text-white rounded-full font-semibold transition-all duration-300 hover:bg-cyan-500/10 hover:-translate-y-1"
               >
                 Learn More About Our Services

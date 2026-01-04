@@ -150,7 +150,7 @@ export default function About() {
                   <Users className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="font-bold text-2xl md:text-3xl text-white">
-                  Founder's Story
+                  Founder&apos;s Story
                 </h3>
               </div>
               
