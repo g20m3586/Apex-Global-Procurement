@@ -243,7 +243,7 @@ export default function VatAdvantage() {
                   <span className="font-bold text-green-400 text-xl">You save MWK 150,000</span>
                 </div>
                 <p className="text-slate-300 leading-relaxed pl-11">
-                  Despite our service fee, you save thanks to formal SADC procedures and VAT optimization. That's real money back in your business.
+                  Despite our service fee, you save thanks to formal SADC procedures and VAT optimization. That&apos;s real money back in your business.
                 </p>
               </div>
             </div>
