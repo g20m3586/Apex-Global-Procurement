@@ -8,8 +8,20 @@ export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true);
+    const id = requestAnimationFrame(() => setIsVisible(true));
+    return () => cancelAnimationFrame(id);
   }, []);
+
+  const [particles] = useState<
+    { left: string; top: string; animation: string; animationDelay: string }[]
+  >(() =>
+    Array.from({ length: 20 }).map(() => ({
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      animation: `float ${5 + Math.random() * 10}s ease-in-out infinite`,
+      animationDelay: `${Math.random() * 5}s`,
+    }))
+  );
 
   const perks = [
     {
@@ -46,15 +58,15 @@ export default function Hero() {
       
       {/* Floating particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+        {particles.map((p, i) => (
           <div
             key={i}
             className="absolute w-1 h-1 bg-cyan-400/30 rounded-full"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `float ${5 + Math.random() * 10}s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 5}s`,
+              left: p.left,
+              top: p.top,
+              animation: p.animation,
+              animationDelay: p.animationDelay,
             }}
           />
         ))}
