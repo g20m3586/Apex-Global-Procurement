@@ -86,6 +86,14 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Reduce layout shift for fixed header by reserving scroll padding */
+html {
+  scroll-padding-top: 4.5rem; /* matches navbar height */
+  scrollbar-gutter: stable both-edges;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -150,4 +158,20 @@ button, a, input, textarea, select {
 @media (min-width: 641px) and (max-width: 1024px) {
   html { font-size: 16px; }
 }
+
+/* Better animation performance and accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Progress bar container to avoid CLS when it appears */
+.top-progress-placeholder {
+  height: 2px;
+}
+
 
