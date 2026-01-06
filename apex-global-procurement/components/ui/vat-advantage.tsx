@@ -42,18 +42,18 @@ export default function VatAdvantage() {
   ];
 
   return (
-    <section id="vat-advantage" className="py-20 px-6 bg-slate-950 relative overflow-hidden">
+    <section id="vat-advantage" className="py-12 md:py-20 px-4 sm:px-6 bg-slate-950 relative overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-500/10 rounded-full filter blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-pink-500/10 rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+      <div className="hidden md:block absolute top-0 right-0 md:w-[500px] md:h-[500px] w-64 h-64 bg-purple-500/10 rounded-full filter blur-3xl animate-pulse pointer-events-none" />
+      <div className="hidden md:block absolute bottom-0 left-0 md:w-[500px] md:h-[500px] w-64 h-64 bg-pink-500/10 rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '1s'}} />
       
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10 px-2 sm:px-4 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-sm font-semibold mb-4 backdrop-blur-sm">
             Our Value Proposition
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             The{' '}
             <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-rose-600 bg-clip-text text-transparent">
               VAT & Duty
@@ -65,11 +65,11 @@ export default function VatAdvantage() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
           {/* Left Column - Diagram & Explanation */}
           <div className="space-y-8">
             {/* Triangular Model */}
-            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-700/50 hover:border-purple-500/30 transition-all duration-300 shadow-xl">
+            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-slate-700/50 hover:border-purple-500/30 transition-all duration-300 shadow-xl">
               <h3 className="font-bold text-2xl text-white mb-6 flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
                   <FileCheck className="w-5 h-5 text-white" />
@@ -78,8 +78,8 @@ export default function VatAdvantage() {
               </h3>
               
               {/* Diagram */}
-              <div className="bg-slate-900/80 p-8 rounded-xl mb-6 border border-slate-700/30">
-                <svg viewBox="0 0 300 240" className="w-full h-56" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Triangular procurement diagram">
+              <div className="bg-slate-900/80 p-6 sm:p-8 rounded-xl mb-6 border border-slate-700/30">
+                <svg viewBox="0 0 300 240" className="w-full h-44 sm:h-56 md:h-64 lg:h-72" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Triangular procurement diagram">
                   <defs>
                     <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto">
                       <path d="M0 0 L10 5 L0 10 z" fill="#06b6d4" />
@@ -139,7 +139,7 @@ export default function VatAdvantage() {
             </div>
 
             {/* How VAT Works */}
-            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-700/50 hover:border-green-500/30 transition-all duration-300 shadow-xl">
+            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-slate-700/50 hover:border-green-500/30 transition-all duration-300 shadow-xl">
               <h4 className="font-bold text-xl text-white mb-6 flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center shadow-lg">
                   <DollarSign className="w-5 h-5 text-white" />
@@ -160,9 +160,9 @@ export default function VatAdvantage() {
           </div>
 
           {/* Right Column - SADC Benefits & Comparison */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             {/* SADC Certificate Benefits */}
-            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-700/50 hover:border-yellow-500/30 transition-all duration-300 shadow-xl">
+            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-slate-700/50 hover:border-yellow-500/30 transition-all duration-300 shadow-xl">
               <h4 className="font-bold text-xl text-white mb-6 flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center shadow-lg">
                   <Award className="w-5 h-5 text-white" />
@@ -192,7 +192,7 @@ export default function VatAdvantage() {
             </div>
 
             {/* Cost Comparison Table */}
-            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-700/50 overflow-hidden shadow-xl">
+            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-slate-700/50 overflow-hidden shadow-xl">
               <h4 className="font-bold text-xl text-white mb-6 flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
                   <TrendingDown className="w-5 h-5 text-white" />

@@ -56,7 +56,6 @@ export default function Services() {
   ];
 
   const notHandled = [
-    { name: "Perishables (fresh food)", reason: "Temperature-sensitive logistics" },
     { name: "Controlled substances / regulated chemicals", reason: "Regulatory restrictions" },
     { name: "Used clothing / second-hand textiles", reason: "Quality control concerns" },
     { name: "Hazardous waste", reason: "Environmental compliance" },

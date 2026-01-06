@@ -291,7 +291,7 @@ export default function Contact() {
               <div className="space-y-3 pl-16">
                 <div className="flex items-start gap-3">
                   <MapPin className="w-4 h-4 text-slate-500 mt-1 flex-shrink-0" />
-                  <p className="text-sm text-slate-300">123 Business Ave, Johannesburg, South Africa</p>
+                  <p className="text-sm text-slate-300">Starlings on 11th rd, Featherbush St, Midrand, South Africa</p>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="w-4 h-4 text-slate-500 flex-shrink-0" />
@@ -332,8 +332,8 @@ export default function Contact() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="w-4 h-4 text-slate-500 flex-shrink-0" />
-                  <a href="mailto:mw@agp.example" className="text-sm text-slate-300 hover:text-cyan-400 transition-colors">
-                    mw@agp.example
+                  <a href="mailto:mhangomorton@gmail.com" className="text-sm text-slate-300 hover:text-cyan-400 transition-colors">
+                    mhangomorton@gmail.com
                   </a>
                 </div>
               </div>
