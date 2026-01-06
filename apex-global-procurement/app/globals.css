@@ -128,3 +128,26 @@ html {
     @apply bg-background text-foreground;
   }
 }
+
+/* Responsive helpers */
+img, picture, video, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Improve touch targets and reduce tap highlight on mobile */
+button, a, input, textarea, select {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  touch-action: manipulation;
+}
+
+/* Slightly increase base font size on small screens for readability */
+@media (max-width: 640px) {
+  html { font-size: 15px; }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  html { font-size: 16px; }
+}
+
