@@ -326,8 +326,8 @@ export default function Contact() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="w-4 h-4 text-slate-500 flex-shrink-0" />
-                  <a href="tel:+2651234567" className="text-sm text-slate-300 hover:text-cyan-400 transition-colors">
-                    +265 1 234 567
+                  <a href="tel:09985129959" className="text-sm text-slate-300 hover:text-cyan-400 transition-colors">
+                    09985129959 
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
